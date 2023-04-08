@@ -33,27 +33,29 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>المنتجات</h5>
+                            <h5>الأصناف</h5>
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                                <table class="table table-striped" style="background-color: #ff6131ea ; font-color: rgba(230, 207, 207, 0.973);">
+                                <table class="table table-striped" style="background-color: #ff6131ea;">
                                     <thead>
                                       <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">إسم الصنف</th>
+                                        <th scope="col">عمليات</th>
                                       </tr>
                                     </thead>
                                     @foreach ($categories as $category)
                                     <tbody>
                                       <tr>
-                                            <td>{{$categories->id}}</th>
-                                            <td>{{$categories->name}}</td>
-                                      </tr>
+                                            <td>{{$category->id}}</th>
+                                            <td>{{$category->name}}</td>
+                                      
                                       <td>
-                                        <a class="btn btn-success" href="{{url('/category-edit/'.$product->id)}}">تعديل</a>
-                                        <a class="btn btn-danger" href="{{url('/category-delete/'.$product->id)}}">حذف</a>
+                                        <a class="btn btn-success" href="{{url('/category-edit/'.$category->id)}}">تعديل</a>
+                                        <a class="btn btn-danger" href="{{url('/category-delete/'.$category->id)}}">حذف</a>
                                     </td>
+                                </tr>
                                        @endforeach
                                      </tbody>
                                      </table>

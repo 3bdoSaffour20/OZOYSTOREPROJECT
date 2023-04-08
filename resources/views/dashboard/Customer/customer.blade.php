@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>إعدادت المنتجات
+                            <h3>إعدادت المستخدمين
                             </h3>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>المنتجات</h5>
+                            <h5>المستخدمين</h5>
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
@@ -42,28 +42,24 @@
                                     <thead>
                                       <tr>
                                         <th scope="col">ID</th>
-                                        <th>إسم المنتج</th>
-                                        <th>الوصف</th>
-                                        <th>صنف المنتج</th>
-                                        <th>صورة المنتج</th>
-                                        <th>تاريخ الإضافة</th>
+                                        <th>رقم المستخدم</th>
+                                        <th>إسم المستخدم</th>
+                                        <th>العنوان</th>
+                                        <th>رقم الهاتف</th>
                                         <th>عمليات</th>
                                       </tr>
                                     </thead>
-                                    @foreach ($products as $product)
+                                    @foreach ($customers as $customer)
                                     <tbody>
                                       <tr>
-                                            <td>{{$product->id}}</th>
-                                            <td>{{$product->name}}</td>
-                                            <td>{{$product->description}}</th>
-                                            <td>{{$product->category->name}}</td>
-                                            <td>
-                                                <img src="{{$product->img}}" alt="" height="80px" width="70px">
-                                            </td>
-                                            <td>{{$product->add_date}}</td> 
+                                            <td>{{$customer->id}}</th>
+                                            <td>{{$customer->user_id}}</td>
+                                            <td>{{$customer->cusname}}</th>
+                                            <td>{{$customer->address}}</td>
+                                            <td>{{$customer->phone}}</td>
                                       <td>
-                                        <a class="btn btn-success" href="{{url('/product-edit/'.$product->id)}}">تعديل</a>
-                                        <a class="btn btn-danger" href="{{url('/product-delete/'.$product->id)}}">حذف</a>
+                                        <a class="btn btn-success" href="{{url('/customer-edit/'.$customer->id)}}">تعديل</a>
+                                        <a class="btn btn-danger" href="{{url('/customer-delete/'.$customer->id)}}">حذف</a>
                                     </td>
                                 </tr>
                                        @endforeach

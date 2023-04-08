@@ -8,8 +8,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>إعدادت الإعلانات
-                            </h3>
+                            <h3>إعدادت الإعلانات</h3>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -42,24 +41,32 @@
                                     <thead>
                                       <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">عنوان اللإعلان</th>
-                                        <th scope="col">محتوى اللإعلان</th>
-                                        <th scope="col">رقم المشترك</th>
-                                        <th scope="col">رقم المنتج</th>
-                                        <th scope="col">نوع الفئة</th>
-                                        <th scope="col">أرشيف الإعلان</th>
+                                        <th>عنوان اللإعلان</th>
+                                        <th>محتوى اللإعلان</th>
+                                        <th> المشترك</th>
+                                        <th> المنتج</th>
+                                        <th>نوع الفئة</th>
+                                        <th>أرشيف الإعلان</th>
+                                        <th>قبول الإعلان</th>
+                                        <th>عمليات</th>
                                       </tr>
                                     </thead>
                                     @foreach ($advertises as $advertise)
                                     <tbody>
                                       <tr>
-                                            <td>{{$advertises->id}}</th>
-                                            <td>{{$advertises->AdTitle}}</td>
-                                            <td>{{$advertises->AdContent}}</th>
-                                            <td>{{$advertises->subscriber_id}}</td>
-                                            <td>{{$advertises->product_id}}</td>
-                                            <td>{{$advertises->category_id}}</td>
-                                            <td>{{$advertises->subarchive}}</td>
+                                            <td>{{$advertise->id}}</th>
+                                            <td>{{$advertise->AdTitle}}</td>
+                                            <td>{{$advertise->AdContent}}</th>
+                                            <td>{{$advertise->subscriber_id}}</td>
+                                            <td>{{$advertise->product_id}}</td>
+                                            <td>{{$advertise->category_id}}</td>
+                                            <td>{{$advertise->subarchive}}</td>
+                                            <td>{{$advertise->accept}}</td>
+
+                                            <td>
+                                                <a class="btn btn-success" href="{{url('/category-edit/'.$category->id)}}">تعديل</a>
+                                                <a class="btn btn-danger" href="{{url('/category-delete/'.$category->id)}}">حذف</a>
+                                            </td>
                                       </tr>
                                        @endforeach
                                      </tbody>

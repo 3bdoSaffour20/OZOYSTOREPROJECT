@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>إعدادت الموقع
+                            <h3>إعدادت الإعلانات
                             </h3>
                         </div>
                     </div>
@@ -34,70 +34,58 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>الاعدادات</h5>
+                            <h5>إضافة إعلان</h5>
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                                <form action="{{ route('dashboard.settings.update', $setting->id) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ url('/advertise-add') }}" method="post">
                                     @csrf
-                                    @method('put')
+                   
+                                    <div class="form-group">
+                                        <label class="col-form-label">عنوان اللإعلان</label>
+                                        <input class="form-control dropify" type="text" name="AdTitle">
+                                    </div>
 
-                                    @if($errors->any())
-                                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                                @endif
+                                    <div class="form-group">
+                                        <label class="col-form-label">محتوى اللإعلان</label>
+                                        <input class="form-control dropify" type="text" name="AdContent">
+                                    </div>        
 
-                                <div class="form-group">
-                                    <label for="validationCustom05" class="col-form-label pt-0">
-                                        لوجو الموقع</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="file" name="logo"  data-default-file="{{asset($setting->logo)}}">
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label ">الصورة المصغرة</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="file" name="favicon"  data-default-file="{{asset($setting->favicon)}}">
-                                </div>
+                                    <div>
+                                        <label class="col-form-label"> المشترك</label>
+                                        <select class="form-control" name="subscriber_id" id="">
+                                            @foreach ($subscribers as $subscriber)
+                                            <option value="{{$subscriber->id}}">{{$subscriber->name}}</option>
+                                            </select>
+                                        @endforeach
+                                    </div>
 
+                                         <div>
+                                        <label class="col-form-label"> المنتج</label>
+                                        <select class="form-control" name="product_id" id="">
+                                            @foreach ($products as $product)
+                                            <option value="{{$product->id}}">{{$product->name}}</option>
+                                            </select>
+                                        @endforeach
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="validationCustom01" class="col-form-label pt-0"><span>*</span>
-                                        اسم الموقع</label>
-                                    <input class="form-control" id="validationCustom01" type="text" name="name" value="{{$setting->name}}">
-                                </div>
+                                    <div >
+                                        <label class="col-form-label"> الصنف</label>
+                                        <select class="form-control" name="category_id" id="">
+                                            @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            </select>
+                                        @endforeach
+                                    </div>
 
+                                    <div class="form-group">
+                                        <label class="col-form-label">أرشيف اللإعلان</label>
+                                        <input class="form-control dropify" type="boolean" name="subarchive">
+                                    </div>   
 
-                                <div class="form-group">
-                                    <label class="col-form-label">وصف الموقع</label>
-                                    <textarea rows="5" cols="12" name="description">{{$setting->twitter}}</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="validationCustom02" class="col-form-label"><span>*</span>
-                                        البريد الإلكتروني </label>
-                                    <input class="form-control" id="validationCustom02" type="text" name="email" value="{{$setting->email}}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="validationCustomtitle" class="col-form-label pt-0">رقم الهاتف</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="phone" value="{{$setting->phone}}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="validationCustomtitle" class="col-form-label pt-0">العنوان</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="address" value="{{$setting->address}}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="validationCustomtitle" class="col-form-label pt-0">رابط الفيس بوك</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="facebook" value="{{$setting->facebook}}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="validationCustomtitle" class="col-form-label pt-0">حساب الانستجرام</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="instagram" value="{{$setting->instagram}}">
-                                </div>
-
-                                <div class="form-group">
-                                    <button class="btn btn-primary" type="submit">حفظ</button>
-                                </div>
-
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" type="submit">حفظ</button>
+                                    </div>
 
                                 </form>
 

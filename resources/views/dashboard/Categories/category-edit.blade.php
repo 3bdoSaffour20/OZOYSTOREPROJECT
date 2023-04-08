@@ -1,24 +1,3 @@
-@extends('auth.layouts.app')
-
-@section('content')
-
-<div class="container mt-5">
-  <div class="card">
-     <div class="card-body">
-
-    <form action="{{url('/category-update/'.$category->id)}}" method="Post">
-@csrf
-@method('put')
-<label for="">إسم الفئة</label>
-<input value="{{$product->name}}" class="form-contol mt-1 mb-3" type="text" name="name">
-
-<button type="submit" class="btn btn-success">حفظ التعديلات</button>
-      </form>
-      </div>
-    </div>
-  </div>
-@endsection
-
 @extends('dashboard.layout.layout')
 
 @section('body')
@@ -59,17 +38,14 @@
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                              <form action="{{url('/product-update/'.$product->id)}}" method="Post">
+                              <form action="{{url('/category-update/'.$category->id)}}" method="Post">
                                     @csrf
                                     @method('put')
 
-                                    @if($errors->any())
-                                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                                @endif
 
                                 <div class="form-group">
                                     <label class="col-form-label">إسم الصنف</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="text" name="name">
+                                    <input value="{{$category->name}}" class="form-control dropify" id="validationCustom05" type="text" name="name">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit">حفظ التعديلات</button>

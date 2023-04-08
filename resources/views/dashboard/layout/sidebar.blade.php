@@ -94,42 +94,49 @@
                     </li>
                 </ul>
             </li>
+          
 
             <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="tag"></i>
-                    <span>Coupons</span>
+                    <span>Orders</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
+
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="coupon-list.html">
-                            <i class="fa fa-circle"></i>List Coupons
+                        <a href="{{url('/order')}}">
+                            <i class="fa fa-circle"></i>
+                            <span>order list</span>
                         </a>
                     </li>
                     <li>
-                        <a href="coupon-create.html">
-                            <i class="fa fa-circle"></i>Create Coupons
+                        <a href="{{url('/order-add')}}">
+                            <i class="fa fa-circle"></i>
+                            <span>add order</span>
                         </a>
                     </li>
                 </ul>
             </li>
-
+           
             <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="clipboard"></i>
-                    <span>Pages</span>
+                    <span>Advertises</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
+
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="pages-list.html">
-                            <i class="fa fa-circle"></i>List Page
+                        <a href="{{url('/advertise')}}">
+                            <i class="fa fa-circle"></i>
+                            <span>advertise list</span>
                         </a>
                     </li>
                     <li>
-                        <a href="page-create.html">
-                            <i class="fa fa-circle"></i>Create Page
+                        <a href="{{url('/advertise-add')}}">
+                            <i class="fa fa-circle"></i>
+                            <span>add advertise</span>
                         </a>
                     </li>
                 </ul>
@@ -170,12 +177,12 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="user-list.html">
+                        <a href="{{url('/customer')}}">
                             <i class="fa fa-circle"></i>User List
                         </a>
                     </li>
                     <li>
-                        <a href="create-user.html">
+                        <a href="{{url('/customer-add')}}">
                             <i class="fa fa-circle"></i>Create User
                         </a>
                     </li>
@@ -190,12 +197,12 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="list-vendor.html">
+                        <a href="{{url('/subscriber')}}">
                             <i class="fa fa-circle"></i>Vendor List
                         </a>
                     </li>
                     <li>
-                        <a href="create-vendors.html">
+                        <a href="{{url('/subscriber-add')}}">
                             <i class="fa fa-circle"></i>Create Vendor
                         </a>
                     </li>
@@ -252,7 +259,7 @@
             </li>
 
             <li>
-                <a class="sidebar-header" href="login.html">
+                <a class="sidebar-header" href="{{url('/login')}}">
                     <i data-feather="log-in"></i>
                     <span>Login</span>
                 </a>

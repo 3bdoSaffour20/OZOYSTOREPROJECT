@@ -40,17 +40,15 @@
                             <div class="digital-add needs-validation">
                                 <form action="{{url('/category-add')}}" method="post">
                                     @csrf
-                                    @if($errors->any())
-                                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                                @endif
+                                    
 
                                 <div class="form-group">
                                     <label class="col-form-label">إسم الصنف</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="text" name="name">
+                                    <input class="form-control dropify" type="text" name="name">
                                 </div>
                             
                                 <div class="form-group">
-                                    <button class="btn btn-primary" type="submit">حفظ</button>
+                                    <button type="submit" class="btn btn-primary" >حفظ</button>
                                 </div>
 
 

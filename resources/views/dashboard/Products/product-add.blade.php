@@ -40,31 +40,28 @@
                             <div class="digital-add needs-validation">
                                 <form action="{{url('/product-add')}}" method="post">
                                     @csrf
-                                    @method('put')
-
-                                    @if($errors->any())
-                                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                                @endif
 
                                 <div class="form-group">
                                     <label class="col-form-label">إسم المنتج</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="text" name="name">
+                                    <input class="form-control dropify"  type="text" name="name">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label class="col-form-label ">وصف المنتج</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="text" name="description">
+                                    <input class="form-control dropify"  type="text" name="description">
                                 </div>
 
                                 <div class="form-group">
-                                  <label class="col-form-label ">صورةالمنتج</label>
-                                  <input class="form-control dropify" id="validationCustom05" type="file" name="img">
+                                  <label class="col-form-label ">صورة المنتج</label>
+                                  <input class="form-control dropify"  type="text" name="img">
                               </div>
 
                                 <div class="form-group">
-                                  <label class="col-form-label ">فئة المنتج</label>
+                                  <label class="col-form-label ">صنف المنتج</label>
+                                  <select class="form-control" name="category_id" id="">
                                   @foreach ($categories as $category)
-                                  <option value="{{$category->id}}">{{$category->name}}</option>
+                                  <option value="{{$category->id}}">{{$category->name}}</option>                                 
+                                  </select>
                               @endforeach
                               </div>
 

@@ -42,35 +42,34 @@
                                     @csrf
                                     @method('put')
 
-                                    @if($errors->any())
-                                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                                @endif
 
                                 <div class="form-group">
                                     <label class="col-form-label">إسم المنتج</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="text" name="name">
+                                    <input value="{{$product->name}}" class="form-control dropify" type="text" name="name">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label class="col-form-label ">وصف المنتج</label>
-                                    <input class="form-control dropify" id="validationCustom05" type="text" name="description">
+                                    <input value="{{$product->description}}" class="form-control dropify" type="text" name="description">
                                 </div>
 
                                 <div class="form-group">
-                                  <label class="col-form-label ">صورةالمنتج</label>
-                                  <input class="form-control dropify" id="validationCustom05" type="file" name="img">
+                                  <label class="col-form-label ">صورة المنتج</label>
+                                  <input value="{{$product->img}}" class="form-control dropify" type="text" name="img">
                               </div>
 
                                 <div class="form-group">
                                   <label class="col-form-label ">فئة المنتج</label>
+                                  <select class="form-control" name="category_id" id="">
                                   @foreach ($categories as $category)
                                   <option value="{{$category->id}}">{{$category->name}}</option>
                               @endforeach
+                                  </select>
                               </div>
 
                               <div class="form-group">
                                 <label class="col-form-label ">تاريخ الإضافة</label>
-                                <input class="form-control dropify" id="validationCustom05" type="date" name="add_date">
+                                <input value="{{$product->add_date}}" class="form-control dropify" type="date" name="add_date">
                             </div>
 
                                 <div class="form-group">
