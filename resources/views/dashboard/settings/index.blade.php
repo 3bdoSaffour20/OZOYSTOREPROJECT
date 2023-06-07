@@ -1,5 +1,8 @@
 @extends('dashboard.layout.layout')
 
+@section('title')
+إعدادت الموقع
+@endsection
 @section('body')
     <div class="page-body">
         <!-- Container-fluid starts-->

@@ -1,48 +1,45 @@
  <!-- Page Sidebar Start-->
  <div class="page-sidebar">
     <div class="main-header-left d-none d-lg-block">
-        <div class="logo-wrapper">
+        {{-- <div class="logo-wrapper">
             <a href="index.html">
-                <img class="d-none d-lg-block blur-up lazyloaded" src="assets/images/dashboard/multikart-logo.png"
+                <img class="d-none d-lg-block blur-up lazyloaded" src="assets/images/dashboard/logo.png"
                     alt="">
             </a>
-        </div>
+        </div> --}}
     </div>
     <div class="sidebar custom-scrollbar">
         <a href="javascript:void(0)" class="sidebar-back d-lg-none d-block"><i class="fa fa-times"
                 aria-hidden="true"></i></a>
         <div class="sidebar-user">
-            <img class="img-60" src="assets/images/dashboard/user3.jpg" alt="#">
-            <div>
-                <h6 class="f-14">JOHN</h6>
-                <p>general manager.</p>
-            </div>
+           
+           
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a class="sidebar-header" href="index.html">
-                    <span>Dashboard</span>
+                <a class="sidebar-header" href="{{url('/dashboard/index')}}">
+                    <span>الرئيسية</span>
                 </a>
             </li>
 
             <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="box"></i>
-                    <span>Products</span>
+                    <span>المنتجات</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
 
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{url('/product')}}">
+                        <a href="{{url('/dashboard/product')}}">
                             <i class="fa fa-circle"></i>
-                            <span>product list</span>
+                            <span>قائمة المنتجات</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('/product-add')}}">
+                        <a href="{{url('/dashboard/product-add')}}">
                             <i class="fa fa-circle"></i>
-                            <span>add product</span>
+                            <span>إضافة منتج</span>
                         </a>
                     </li>
                 </ul>
@@ -51,125 +48,106 @@
             <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="archive"></i>
-                    <span>Categories</span>
+                    <span>الأصناف</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
 
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{url('/category')}}">
+                        <a href="{{url('/dashboard/category')}}">
                             <i class="fa fa-circle"></i>
-                            <span>category list</span>
+                            <span>قائمة الأصناف</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('/category-add')}}">
+                        <a href="{{url('/dashboard/category-add')}}">
                             <i class="fa fa-circle"></i>
-                            <span>add category</span>
+                            <span>إضافة صنف</span>
                         </a>
                     </li>
                 </ul>
             </li>
             
 
-            <li>
+            {{-- <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="dollar-sign"></i>
-                    <span>Inventories</span>
+                    <span>المخازن</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
 
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{url('/inventory')}}">
+                        <a href="{{url('/dashboard/inventory')}}">
                             <i class="fa fa-circle"></i>
-                            <span>inventory list</span>
+                            <span>قائمة المخازن</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('/inventory-add')}}">
+                        <a href="{{url('/dashboard/inventory-add')}}">
                             <i class="fa fa-circle"></i>
-                            <span>add inventory</span>
+                            <span>إضافة مخزن</span>
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
           
 
-            <li>
+           <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="tag"></i>
-                    <span>Orders</span>
+                    <span>الطلبات</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
 
                 <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{url('/order')}}">
+                    {{-- <li>
+                        <a href="{{url('/dashboard/order')}}">
                             <i class="fa fa-circle"></i>
                             <span>order list</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
-                        <a href="{{url('/order-add')}}">
+                        <a href="{{url('/dashboard/order-view')}}">
+                            <i class="fa fa-circle"></i>
+                            <span>عرض الطلبات</span>
+                        </a>
+                    </li>
+                </ul>
+                     {{-- 
+                    <li>
+                        <a href="{{url('/dashboard/order-add')}}">
                             <i class="fa fa-circle"></i>
                             <span>add order</span>
                         </a>
                     </li>
-                </ul>
-            </li>
+                
+            </li> --}}
            
             <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="clipboard"></i>
-                    <span>Advertises</span>
+                    <span>الإعلانات</span>
                     <i class="fa fa-angle-right pull-right"></i>
                 </a>
 
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{url('/advertise')}}">
+                        <a href="{{url('/dashboard/advertise')}}">
                             <i class="fa fa-circle"></i>
-                            <span>advertise list</span>
+                            <span>قائمة الإعلانات</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('/advertise-add')}}">
+                        <a href="{{url('/dashboard/advertise-add')}}">
                             <i class="fa fa-circle"></i>
-                            <span>add advertise</span>
+                            <span>إضافة إعلان</span>
                         </a>
                     </li>
                 </ul>
             </li>
-
-            <li>
-                <a class="sidebar-header" href="media.html">
-                    <i data-feather="camera"></i>
-                    <span>Media</span>
-                </a>
-            </li>
-
-            <li>
-                <a class="sidebar-header" href="javascript:void(0)">
-                    <i data-feather="align-left"></i>
-                    <span>Menus</span>
-                    <i class="fa fa-angle-right pull-right"></i>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="menu-list.html">
-                            <i class="fa fa-circle"></i>Menu Lists
-                        </a>
-                    </li>
-                    <li>
-                        <a href="create-menu.html">
-                            <i class="fa fa-circle"></i>Create Menu
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
+         
+            {{-- <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="user-plus"></i>
                     <span>Users</span>
@@ -183,33 +161,14 @@
                     </li>
                     <li>
                         <a href="{{url('/customer-add')}}">
-                            <i class="fa fa-circle"></i>Create User
+                            <i class="fa fa-circle"></i>add User
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
-            <li>
-                <a class="sidebar-header" href="javascript:void(0)">
-                    <i data-feather="users"></i>
-                    <span>Vendors</span>
-                    <i class="fa fa-angle-right pull-right"></i>
-                </a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="{{url('/subscriber')}}">
-                            <i class="fa fa-circle"></i>Vendor List
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{url('/subscriber-add')}}">
-                            <i class="fa fa-circle"></i>Create Vendor
-                        </a>
-                    </li>
-                </ul>
-            </li>
 
-            <li>
+            {{-- <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <i data-feather="chrome"></i>
                     <span>Localization</span>
@@ -229,39 +188,28 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li>
-                <a class="sidebar-header" href="support-ticket.html"><i data-feather="phone"></i><span>Support
-                        Ticket</span>
+                <a class="sidebar-header" href="support-ticket.html"><i data-feather="phone"></i><span>بطاقة الدعم</span>
                 </a>
             </li>
 
             <li>
-                <a class="sidebar-header" href="reports.html"><i data-feather="bar-chart"></i><span>Reports</span>
+                <a class="sidebar-header" href="reports.html"><i data-feather="bar-chart"></i><span>التقارير</span>
                 </a>
             </li>
 
             <li>
-                <a class="sidebar-header" href=""><i data-feather="settings"></i><span>اعدادات
+                <a class="sidebar-header" href="{{url('/dashboard/settings')}}"><i data-feather="settings"></i><span>اعدادات
                         الموقع</span></a>
             </li>
 
-            <li>
-                <a class="sidebar-header" href="invoice.html"><i data-feather="archive"></i><span>Invoice</span></a>
-            </li>
 
             <li>
-                <a class="sidebar-header" href="forgot-password.html">
-                    <i data-feather="key"></i>
-                    <span>Forgot Password</span>
-                </a>
-            </li>
-
-            <li>
-                <a class="sidebar-header" href="{{url('/login')}}">
+                <a class="sidebar-header" href="{{url('/logout')}}">
                     <i data-feather="log-in"></i>
-                    <span>Login</span>
+                    <span>تسجيل الخروج</span>
                 </a>
             </li>
         </ul>

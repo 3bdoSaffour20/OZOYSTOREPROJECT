@@ -12,7 +12,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{ asset('dashboard') }}/assets/images/dashboard/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard') }}/assets/images/dashboard/favicon.png" type="image/x-icon">
-    <title>صفحة المشتركين</title>
+    <title>@yield('title')</title>
 
     <!-- Google font-->
     <link rel="stylesheet"
@@ -71,7 +71,7 @@
                 </div>
                 <div class="nav-right col">
                     <ul class="nav-menus">
-                        <li>
+                        {{-- <li>
                             <form class="form-inline search-form">
                                 <div class="form-group">
                                     <input class="form-control-plaintext" type="search" placeholder="Search..">
@@ -80,13 +80,13 @@
                                     </span>
                                 </div>
                             </form>
-                        </li>
+                        </li> --}}
                         <li>
                             <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
                                 <i data-feather="maximize-2"></i>
                             </a>
                         </li>
-                        <li class="onhover-dropdown">
+                        {{-- <li class="onhover-dropdown">
                             <a class="txt-dark" href="javascript:void(0)">
                                 <h6>EN</h6>
                             </a>
@@ -108,7 +108,7 @@
                                         <i class="flag-icon flag-icon-nz"></i>French</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="onhover-dropdown">
                             <i data-feather="bell"></i>
                             <span class="badge badge-pill badge-primary pull-right notification-badge">3</span>
@@ -191,7 +191,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="{{url('/logout')}}">
                                         <i data-feather="log-out"></i>Logout
                                     </a>
                                 </li>

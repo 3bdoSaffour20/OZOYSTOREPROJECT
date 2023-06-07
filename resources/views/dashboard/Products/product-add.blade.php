@@ -1,6 +1,16 @@
 @extends('dashboard.layout.layout')
-
+@section('title')
+ إضافة المنتجات
+@endsection
 @section('body')
+
+@if(session('failed'))
+    <div class="alert alert-danger">
+        <div class="mb-2">{{session('failed')}}</div>
+    </div>
+@endif
+
+
     <div class="page-body">
         <!-- Container-fluid starts-->
         <div class="container-fluid">
@@ -15,7 +25,7 @@
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -38,8 +48,18 @@
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                                <form action="{{url('/product-add')}}" method="post">
+                                <form action="{{url('/dashboard/product-add')}}" method="post">
                                     @csrf
+
+
+                                    <div class="form-group">
+                                        <label class="col-form-label ">صنف المنتج</label>
+                                        <select class="form-control" name="category_id" id="">
+                                        @foreach ($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->name}}</option>         
+                                        @endforeach  
+                                      </select>
+                                    </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label">إسم المنتج</label>
@@ -56,14 +76,15 @@
                                   <input class="form-control dropify"  type="text" name="img">
                               </div>
 
-                                <div class="form-group">
-                                  <label class="col-form-label ">صنف المنتج</label>
-                                  <select class="form-control" name="category_id" id="">
-                                  @foreach ($categories as $category)
-                                  <option value="{{$category->id}}">{{$category->name}}</option>                                 
-                                  </select>
-                              @endforeach
-                              </div>
+                              <div class="form-group">
+                                <label class="col-form-label ">السعر</label>
+                                <input class="form-control dropify"  type="text" name="price">
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-form-label ">الكمية</label>
+                              <input class="form-control dropify"  type="text" name="quantity">
+                          </div>
 
                               <div class="form-group">
                                 <label class="col-form-label ">تاريخ الإضافة</label>

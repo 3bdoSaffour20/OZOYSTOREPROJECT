@@ -17,10 +17,9 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->type == 'subscriber') {
+        if(auth()->user()->type == '1') {
             return $next($request);
         }
-        Auth::logout();
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 }

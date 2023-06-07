@@ -37,16 +37,14 @@
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                                <table class="table table-striped" style="background-color: #ec4917 ;">
+                                <table class="table table-striped" style="background-color: #ff6131ea ;">
                                     <thead>
                                       <tr>
                                         <th scope="col">ID</th>
                                         <th>عنوان اللإعلان</th>
                                         <th>محتوى اللإعلان</th>
-                                        <th> المشترك</th>
                                         <th> المنتج</th>
-                                        <th>نوع الفئة</th>
-                                        <th>أرشيف الإعلان</th>
+                                        <th>نوع الصنف</th>
                                         <th>قبول الإعلان</th>
                                         <th>عمليات</th>
                                       </tr>
@@ -57,15 +55,13 @@
                                             <td>{{$advertise->id}}</th>
                                             <td>{{$advertise->AdTitle}}</td>
                                             <td>{{$advertise->AdContent}}</th>
-                                            <td>{{$advertise->subscriber_id}}</td>
-                                            <td>{{$advertise->product_id}}</td>
-                                            <td>{{$advertise->category_id}}</td>
-                                            <td>{{$advertise->subarchive}}</td>
+                                            <td>{{$advertise->product->name}}</td>
+                                            <td>{{$advertise->category->name}}</td>
                                             <td>{{$advertise->accept}}</td>
 
                                             <td>
-                                                <a class="btn btn-success" href="{{url('/category-edit/'.$category->id)}}">تعديل</a>
-                                                <a class="btn btn-danger" href="{{url('/category-delete/'.$category->id)}}">حذف</a>
+                                                <a class="btn btn-success" href="{{url('/dashboard/advertise-edit/'.$advertise->id)}}">تعديل</a>
+                                                <a class="btn btn-danger" href="{{url('/dashboard/advertise-delete/'.$advertise->id)}}">حذف</a>
                                             </td>
                                       </tr>
                                        @endforeach

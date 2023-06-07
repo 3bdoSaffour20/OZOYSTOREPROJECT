@@ -38,7 +38,7 @@
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                                <form action="{{ url('/advertise-update') }}" method="post">
+                                <form action="{{ url('/dashboard/advertise-update') }}" method="post">
                                     @csrf
                                     @method('put')
 
@@ -52,14 +52,7 @@
                                         <input value="{{$advertise->AdContent}}" class="form-control dropify" type="text" name="AdContent">
                                     </div>        
 
-                                    <div>
-                                        <label class="col-form-label"> المشترك</label>
-                                        <select class="form-control" name="subscriber_id" id="">
-                                            @foreach ($subscribers as $subscriber)
-                                            <option value="{{$subscriber->id}}">{{$subscriber->name}}</option>
-                                            </select>
-                                        @endforeach
-                                    </div>
+                               
 
                                          <div>
                                         <label class="col-form-label"> المنتج</label>
@@ -79,15 +72,14 @@
                                         @endforeach
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="col-form-label">أرشيف اللإعلان</label>
-                                        <input value="{{$advertise->subarchive}}" class="form-control dropify" type="boolean" name="subarchive">
-                                    </div>   
 
                                     <div class="form-group">
                                         <label class="col-form-label">قبول اللإعلان</label>
-                                        <input value="{{$advertise->accept}}" class="form-control dropify" type="boolean" name="accept">
-                                    </div> 
+                                        <select class="form-control" name="accept">
+                                            <option value="1">نعم</option>
+                                            <option value="0">لا</option>
+                                        </select>    
+                                    </div>  
 
                                     <div class="form-group">
                                         <button class="btn btn-primary" type="submit">حفظ التعديلات</button>

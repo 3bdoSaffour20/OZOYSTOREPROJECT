@@ -1,5 +1,8 @@
 @extends('dashboard.layout.layout')
 
+@section('title')
+إضافة صنف
+@endsection
 @section('body')
     <div class="page-body">
         <!-- Container-fluid starts-->
@@ -15,7 +18,7 @@
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                            <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -38,7 +41,7 @@
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                                <form action="{{url('/category-add')}}" method="post">
+                                <form action="{{url('/dashboard/category-add')}}" method="post">
                                     @csrf
                                     
 
@@ -46,12 +49,17 @@
                                     <label class="col-form-label">إسم الصنف</label>
                                     <input class="form-control dropify" type="text" name="name">
                                 </div>
+
+                                <div class="form-group">
+                                  <label class="col-form-label ">صورة الصنف</label>
+                                  <input class="form-control dropify"  type="text" name="img">
+                              </div>
+                                
                             
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary" >حفظ</button>
                                 </div>
-
-
+                                
                                 </form>
 
                             </div>

@@ -1,5 +1,7 @@
 @extends('dashboard.layout.layout')
-
+@section('title')
+الأصناف
+@endsection
 @section('body')
     <div class="page-body">
         <!-- Container-fluid starts-->
@@ -14,7 +16,7 @@
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -42,18 +44,23 @@
                                       <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">إسم الصنف</th>
+                                        <th scope="col">صورة الصنف</th>
                                         <th scope="col">عمليات</th>
                                       </tr>
                                     </thead>
-                                    @foreach ($categories as $category)
                                     <tbody>
+                                        @foreach ($categories as $category)
                                       <tr>
                                             <td>{{$category->id}}</th>
                                             <td>{{$category->name}}</td>
+                                            <td>
+                                                <img src="{{ asset('img') }}/{{ $category->img }}" alt="" height="100px" width="80px">
+                                            </td>
+
                                       
                                       <td>
-                                        <a class="btn btn-success" href="{{url('/category-edit/'.$category->id)}}">تعديل</a>
-                                        <a class="btn btn-danger" href="{{url('/category-delete/'.$category->id)}}">حذف</a>
+                                      <a class="btn btn-success" href="{{url('/dashboard/category-edit/'.$category->id)}}">تعديل</a>
+                                        <a class="btn btn-danger" href="{{url('/dashboard/category-delete/'.$category->id)}}">حذف</a>
                                     </td>
                                 </tr>
                                        @endforeach

@@ -14,6 +14,7 @@
     <link rel="icon" href="assets/images/dashboard/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/dashboard/favicon.png" type="image/x-icon">
     <title>Welcome to OzoyStore</title>
+    
 
     <!-- Google font-->
     <link rel="stylesheet"

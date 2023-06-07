@@ -1,5 +1,15 @@
 @extends('dashboard.layout.layout')
 
+@section('title')
+ تعديل المنتجات
+@endsection
+
+@if(session('failed'))
+    <div class="alert alert-danger">
+        <div class="mb-2">{{session('failed')}}</div>
+    </div>
+@endif
+
 @section('body')
     <div class="page-body">
         <!-- Container-fluid starts-->
@@ -15,7 +25,7 @@
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -38,7 +48,7 @@
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
-                              <form action="{{url('/product-update/'.$product->id)}}" method="Post">
+                              <form action="{{url('/dashboard/product-update/'.$product->id)}}" method="Post">
                                     @csrf
                                     @method('put')
 
@@ -61,7 +71,7 @@
                                 <div class="form-group">
                                   <label class="col-form-label ">فئة المنتج</label>
                                   <select class="form-control" name="category_id" id="">
-                                  @foreach ($categories as $category)
+                              @foreach ($categories as $category)
                                   <option value="{{$category->id}}">{{$category->name}}</option>
                               @endforeach
                                   </select>

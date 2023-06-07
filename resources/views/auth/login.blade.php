@@ -124,9 +124,8 @@
                             <div class="single-item">
                                 <div>
                                     <div>
-                                        <h3>Welcome to Multikart</h3>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum has been the industry's standard dummy.</p>
+                                        <h3>أهلاً بكم في سوق OZOYE الإلكتروني</h3>
+                                        <p>متجر OZOYE الإلكتروني حيث يتم فيه بيع الأجهزة الإلكترونية.</p>
                                     </div>
                                 </div>
                             </div>
@@ -139,22 +138,24 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" id="top-profile-tab" data-bs-toggle="tab"
                                             href="#top-profile" role="tab" aria-controls="top-profile"
-                                            aria-selected="true"><span class="icon-user me-2"></span>Login</a>
+                                            aria-selected="true"><span class="icon-user me-2"></span>تسجيل الدخول</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="contact-top-tab" data-bs-toggle="tab"
                                             href="#top-contact" role="tab" aria-controls="top-contact"
-                                            aria-selected="false"><span class="icon-unlock me-2"></span>Register</a>
+                                            aria-selected="false"><span class="icon-unlock me-2"></span>إنشاء حساب</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="top-tabContent">
                                     <div class="tab-pane fade show active" id="top-profile" role="tabpanel"
                                         aria-labelledby="top-profile-tab">
                                         {{-- // login --}}
-                                        <form class="form-horizontal auth-form" method="POST"
-                                            action="{{ route('login') }}">
+                                        <form class="form-horizontal auth-form" action="{{ route('login') }}"  method="POST" >
                                             @csrf
                                             <div class="form-group">
+
+                                                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('البريد الإلكتروني:') }}</label>
+
                                                 <input id="email" type="email"
                                                     class="form-control @error('email') is-invalid @enderror" name="email"
                                                     value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -166,6 +167,8 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
+                                                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('كلمة المرور:') }}</label>
+
                                                 <input id="password" type="password"
                                                     class="form-control @error('password') is-invalid @enderror"
                                                     name="password" required autocomplete="current-password">
@@ -179,17 +182,16 @@
                                             <div class="form-terms">
                                                 <div class="form-check mesm-2">
                                                    
-                                                    <a href="javascript:void(0)" class="btn btn-default forgot-pass">Forgot
-                                                        Password!</a>
+                                                    <a href="javascript:void(0)" class="btn btn-default forgot-pass">نسيت كلمة المرور؟</a>
                                                 </div>
                                             </div>
                                             <div class="form-button">
                                                 <button type="submit" class="btn btn-primary">
-                                                    {{ __('Login') }}
+                                                    {{ __('تسجيل الدخول') }}
                                                 </button>
                                             </div>
                                             <div class="form-footer">
-                                                <span>Or Login up with social platforms</span>
+                                                <span>صفحات التواصل</span>
                                                 <ul class="social">
                                                     <li><a class="ti-facebook" href=""></a></li>
                                                     <li><a class="ti-twitter" href=""></a></li>
@@ -206,7 +208,7 @@
                                             @csrf
                     
                                             <div class="row mb-3">
-                                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('الإسم:') }}</label>
                     
                                                 <div class="col-md-6">
                                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -220,7 +222,7 @@
                                             </div>
                     
                                             <div class="row mb-3">
-                                                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('البريد الإلكتروني:') }}</label>
                     
                                                 <div class="col-md-6">
                                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -232,11 +234,40 @@
                                                     @enderror
                                                 </div>
                                             </div>
+
+                                            <div class="row mb-3">
+                                                <label for="Phone_Num" class="col-md-4 col-form-label text-md-end">{{ __('رقم الهاتف:') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="Phone_Num" type="textAddress" class="form-control @error('Phone_Num') is-invalid @enderror" name="Phone_Num" value="{{ old('Phone_Num') }}" required autocomplete="Phone_Num">
+                    
+                                                    @error('Phone_Num')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row mb-3">
+                                                <label for="Address" class="col-md-4 col-form-label text-md-end">{{ __('العنوان:') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="Address" type="text" class="form-control @error('Address') is-invalid @enderror" name="Address" value="{{ old('Address') }}" required autocomplete="Address">
+                    
+                                                    @error('Address')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
                     
 
                     
                                             <div class="row mb-3">
-                                                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('كلمة المرور:') }}</label>
                     
                                                 <div class="col-md-6">
                                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -250,7 +281,7 @@
                                             </div>
                     
                                             <div class="row mb-3">
-                                                <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                                                <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('تأكيد كلمة المرور:') }}</label>
                     
                                                 <div class="col-md-6">
                                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -260,7 +291,7 @@
                                             <div class="row mb-0">
                                                 <div class="col-md-6 offset-md-4">
                                                     <button type="submit" class="btn btn-primary">
-                                                        {{ __('Register') }}
+                                                        {{ __('إنشاء حساب') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -273,7 +304,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="index.html" class="btn btn-primary back-btn"><i data-feather="arrow-left"></i>back</a>
+                <a href="index.html" class="btn btn-primary back-btn"><i data-feather="arrow-left"></i>رجوع</a>
             </div>
         </div>
     </div>

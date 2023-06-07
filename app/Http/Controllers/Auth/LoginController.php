@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -41,10 +42,32 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        if (auth()->user()->type == 'subscriber')  {
+        if (auth()->user()->type == '1')  {
             return '/dashboard/index';
+
         }
-       return  redirect()->route('index');
         
+       return  redirect()->route('home');
+        
+    }
+
+    public function login(Request $request) {
+        $cred = $request->only('email', 'password');
+        if(Auth::attempt($cred)) {
+            if(Auth::user()->type == '1') {
+                return redirect('/dashboard/index');
+            }
+            elseif(Auth::user()->type == '0') {
+                return redirect('/home');
+            }
+        }
+        else {
+            return redirect('/login');
+        }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect('/login');
     }
 }

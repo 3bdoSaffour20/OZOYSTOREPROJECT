@@ -1,5 +1,8 @@
 @extends('dashboard.layout.layout')
 
+@section('title')
+الطلب
+@endsection
 @section('body')
     <div class="page-body">
         <!-- Container-fluid starts-->
@@ -8,14 +11,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>إعدادت المنتجات
+                            <h3>إعدادت الطلبات
                             </h3>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -54,21 +57,21 @@
                                     <tbody>
                                       <tr>
                                             <td>{{$order->id}}</th>
-                                            <td>{{$order->product->name}}</td>
+                                            <td>{{$order->product}}</td>
                                             <td>{{$order->price}}</th>
                                             <td>{{$order->quantity}}</td>
                                             <td>{{$order->ordered}}</th>
                                             <td>{{$order->shipped}}</td>
                                               
                                       <td>
-                                        <a class="btn btn-success" href="{{url('/order-edit/'.$order->id)}}">تعديل</a>
-                                        <a class="btn btn-danger" href="{{url('/order-delete/'.$order->id)}}">حذف</a>
+                                        <a class="btn btn-success mb-1" href="{{url('/dashboard/order-edit/'.$order->id)}}">تعديل</a>
+                                        <a class="btn btn-danger mt-2" href="{{url('/dashboard/order-delete/'.$order->id)}}">حذف</a>
                                     </td>
                                 </tr>
                                        @endforeach
                                      </tbody>
                                      </table>
-                                </form>
+                          
 
                             </div>
                         </div>

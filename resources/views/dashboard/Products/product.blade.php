@@ -1,5 +1,7 @@
 @extends('dashboard.layout.layout')
-
+@section('title')
+المنتجات
+@endsection
 @section('body')
     <div class="page-body">
         <!-- Container-fluid starts-->
@@ -15,7 +17,7 @@
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -42,28 +44,32 @@
                                     <thead>
                                       <tr>
                                         <th scope="col">ID</th>
+                                        <th>صنف المنتج</th>
                                         <th>إسم المنتج</th>
                                         <th>الوصف</th>
-                                        <th>صنف المنتج</th>
                                         <th>صورة المنتج</th>
+                                        <th>السعر</th>
+                                        <th>الكمية</th>
                                         <th>تاريخ الإضافة</th>
                                         <th>عمليات</th>
                                       </tr>
                                     </thead>
-                                    @foreach ($products as $product)
                                     <tbody>
+                                        @foreach ($products as $product)
                                       <tr>
                                             <td>{{$product->id}}</th>
+                                            <td>{{$product->category->name}}</td>
                                             <td>{{$product->name}}</td>
                                             <td>{{$product->description}}</th>
-                                            <td>{{$product->category->name}}</td>
                                             <td>
-                                                <img src="{{$product->img}}" alt="" height="80px" width="70px">
+                                                <img src="{{ asset('img') }}/{{ $product->img }}" alt="" height="100px" width="80px">
                                             </td>
+                                            <td>{{$product->price}}</td>
+                                            <td>{{$product->quantity}}</td>  
                                             <td>{{$product->add_date}}</td> 
                                       <td>
-                                        <a class="btn btn-success" href="{{url('/product-edit/'.$product->id)}}">تعديل</a>
-                                        <a class="btn btn-danger" href="{{url('/product-delete/'.$product->id)}}">حذف</a>
+                                        <a class="btn btn-success mb-1" href="{{url('/dashboard/product-edit/'.$product->id)}}">تعديل</a>
+                                        <a class="btn btn-danger mt-2" href="{{url('/dashboard/product-delete/'.$product->id)}}">حذف</a>
                                     </td>
                                 </tr>
                                        @endforeach

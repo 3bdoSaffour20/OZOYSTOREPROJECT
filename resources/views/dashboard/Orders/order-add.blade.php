@@ -1,21 +1,21 @@
-@extends('dashboard.layout.layout')
+<!-- @extends('dashboard.layout.layout')
 
 @section('body')
     <div class="page-body">
-        <!-- Container-fluid starts-->
+         Container-fluid starts
         <div class="container-fluid">
             <div class="page-header">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="page-header-left">
-                            <h3>إعدادت الموقع
+                            <h3>إعدادت الطلبات
                             </h3>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="{{url('/index')}}">
                                     <i data-feather="home"></i>
                                 </a>
                             </li>
@@ -26,15 +26,15 @@
                 </div>
             </div>
         </div>
-        <!-- Container-fluid Ends-->
+         Container-fluid Ends
 
-        <!-- Container-fluid starts-->
+         Container-fluid starts 
         <div class="container-fluid">
             <div class="row product-adding">
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>إضافة منتج</h5>
+                            <h5>إضافة طلبية</h5>
                         </div>
                         <div class="card-body">
                             <div class="digital-add needs-validation">
@@ -43,11 +43,11 @@
 
                                 <div class="form-group">
                                     <label class="col-form-label">إسم المنتج</label>
-                                    <select class="form-control" name="category_id" id="">
+                                    <select class="form-control" name="product_id" id="">
                                         @foreach ($products as $product)
-                                        <option value="{{$product->id}}">{{$product->name}}</option>                                 
-                                        </select>
+                                        <option value="{{$product->id}}">{{$product->name}}</option>                                   
                                     @endforeach
+                                </select>
                                 </div>
                                 
                                 <div class="form-group">
@@ -84,6 +84,6 @@
 
             </div>
         </div>
-        <!-- Container-fluid Ends-->
+         Container-fluid Ends
     </div>
-@endsection
+@endsection// -->
